@@ -2,9 +2,8 @@
 
 A complete proof-of-concept for an intelligent flood incident response platform that connects citizens, experts, and government authorities in real-time. CityFlow demonstrates incident deduplication, collaborative discussion threads, AI-powered recommendations, and live case tracking.
 
-**Status**: ✅ MVP Complete with localStorage demo
 **Tech Stack**: React + Vite + Leaflet + Tailwind CSS
-**Data**: Frontend-only (localStorage persistence)
+**Data**: Frontend-only
 
 ---
 
@@ -16,44 +15,12 @@ A complete proof-of-concept for an intelligent flood incident response platform 
 
 ### Installation
 ```bash
-cd k:\flood-copy-final
+cd k:\CityFlow
 npm install
 npm run dev
 ```
 
 Open browser at `http://localhost:5173`
-
----
-
-## 📖 Documentation & Demo Guides
-
-### For Demo Recording & Presentation
-1. **[VIDEO_SCRIPT.md](./VIDEO_SCRIPT.md)** — Complete 10-minute demo script with timing
-   - Problem statement & solution overview
-   - Step-by-step walkthrough with voiceover
-   - Key takeaways & roadmap
-   - Production notes & variations
-
-2. **[STORYBOARD.md](./STORYBOARD.md)** — Visual scene-by-scene breakdown
-   - Layout mockups for each scene
-   - Animation descriptions
-   - Timing breakdown
-   - Production specifications (colors, typography, etc.)
-
-3. **[RECORDING_GUIDE.md](./RECORDING_GUIDE.md)** — Technical recording instructions
-   - Pre-recording checklist
-   - Scene-by-scene recording instructions
-   - Audio & voiceover tips
-   - Tool recommendations
-   - File organization
-
-### For Using the Demo
-1. **[DEMO_FLOW.md](./DEMO_FLOW.md)** — Interactive demo walkthrough
-   - User credentials
-   - Complete workflow steps
-   - Feature explanations
-   - Testing tips
-   - localStorage reference
 
 ---
 
@@ -187,35 +154,13 @@ Incident Resolved ✓
 - Risk assessment metrics
 
 ---
-
+ Sample: 
 | Name | Email | Password | Role |
 |------|-------|----------|------|
 | Rajesh Kumar | rajesh.kumar@email.com | password123 | Citizen |
 | Dr. Priya Sharma | priya.sharma@email.com | password123 | Expert |
 | Govind Desai | govind.desai@email.com | password123 | Government |
 | Amit Patel | amit.patel@email.com | password123 | Field Worker |
-
----
-
-## 📱 App Structure
-
-### Pages
-- **Map.jsx** — Real-time incident map with pins
-- **Report.jsx** — Citizen reporting interface with AI analysis
-- **ClusterDetails.jsx** — Incident detail view with discussion, recommendations, linked reports
-- **Login.jsx** / **Register.jsx** — Authentication
-- **Community.jsx** — Collaboration space
-- **ExpertDashboard.jsx** — Expert view & task management
-
-### Components
-- **JoinOrCreateModal.jsx** — Beautiful prompt for deduplication decision
-- **Navbar.jsx** / **Footer.jsx** — Layout
-- **Various pages** — Full app ecosystem
-
-### Context
-- **MockDataContext.jsx** — All state management & localStorage persistence
-  - Functions: `submitReport`, `findNearestCluster`, `addComment`, `generateRecommendations`, `mergeClusters`, etc.
-  - Data: users, clusters, reports, comments, recommendations, solutions, cases, tasks
 
 ---
 
@@ -241,31 +186,7 @@ User Can:
 
 ---
 
-## 💾 LocalStorage Structure
-
-All demo data stored under `mockData` key:
-
-```javascript
-{
-  "users": [...],
-  "clusters": [...],
-  "reports": [...],
-  "comments": [...],
-  "recommendations": [...],
-  "solutions": [...],
-  "cases": [...],
-  "expertTasks": [...],
-  "fieldTasks": [...],
-  "actionPlans": [...],
-  "currentUser": {...}
-}
-```
-
-**To reset demo**: `localStorage.clear()` in browser console
-
----
-
-## 🎮 Demo Scenarios - Complete Workflow
+## 🎮 Complete Workflow
 
 ### **Scenario 1: Citizen Detects Waterlogging**
 1. ✅ Rajesh Kumar (Citizen) witnesses heavy waterlogging on Bandra Link Road
@@ -339,69 +260,6 @@ All demo data stored under `mockData` key:
 
 ---
 
-## 🚀 Roadmap
-
-### Phase 1 (Current - MVP)
-- ✅ Frontend with localStorage
-- ✅ Deduplication logic (Haversine)
-- ✅ Discussion threads
-- ✅ Rule-based recommendations
-- ✅ Join vs Create modal
-- ✅ Linked reports aggregation
-- ✅ Admin merge feature
-
-### Phase 2 (6-12 months)
-- 🔄 Backend infrastructure (Node.js + MongoDB)
-- 🔄 Real authentication (JWT/OAuth)
-- 🔄 Mobile apps (iOS/Android)
-- 🔄 Advanced AI (Computer vision for image analysis)
-- 🔄 Real-time WebSocket updates
-
-### Phase 3 (12-24 months)
-- 🔄 Predictive analytics (flood hotspot prediction)
-- 🔄 IoT integration (drain/water sensors)
-- 🔄 Municipal system integration
-- 🔄 Multi-city deployment
-
-### Phase 4 (2+ years)
-- 🔄 Blockchain for transparency
-- 🔄 Gamification (citizen engagement rewards)
-- 🔄 International expansion
-- 🔄 Climate & weather API integration
-
----
-
-## 📊 Key Metrics (Expected)
-
-- ⏱️ **Response Time**: Reduced by ~50%
-- 💰 **Resource Optimization**: 30-40% cost savings
-- 👥 **Citizen Engagement**: +60% participation
-- 📈 **Data Quality**: +80% accuracy (with deduplication)
-- 🎯 **Incident Resolution**: 2-3x faster
-
----
-
-## 🔐 Security & Privacy (Production Notes)
-
-- ⚠️ **Current MVP**: No real authentication (demo-level only)
-- Location data is shown precisely (production: may need privacy controls)
-- All data in browser localStorage (not encrypted in demo)
-- Before production: Implement JWT auth, data encryption, role-based access control
-
----
-
-## 🐛 Known Limitations (Frontend Demo)
-
-- ❌ No real backend database
-- ❌ AI analysis is mocked (random generation, not real ML)
-- ❌ No image processing or computer vision
-- ❌ No real-time sync between users
-- ❌ No authentication enforcement
-- ❌ Merge is immediate (no approval workflow)
-- ❌ Recommendations are rule-based only (no LLM integration)
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -425,105 +283,8 @@ flood-copy-final/
 │   └── main.jsx
 ├── public/
 ├── server/
-│   └── ws-demo.js              # WebSocket demo (optional)
-├── DEMO_FLOW.md               # Interactive demo guide
-├── VIDEO_SCRIPT.md            # 10-min demo video script
-├── STORYBOARD.md              # Visual scene breakdown
-├── RECORDING_GUIDE.md         # Recording instructions
 ├── vite.config.js
 ├── package.json
 └── README.md (this file)
 ```
-
----
-
-## 🎬 Creating a Demo Video
-
-### Quick Start
-1. Read **[VIDEO_SCRIPT.md](./VIDEO_SCRIPT.md)** (10-minute script with timing)
-2. Review **[STORYBOARD.md](./STORYBOARD.md)** (visual breakdown)
-3. Follow **[RECORDING_GUIDE.md](./RECORDING_GUIDE.md)** (technical instructions)
-
-### Expected Duration
-- Recording: 2-3 hours
-- Editing: 3-4 hours
-- **Total**: 5-7 hours for a polished 10-minute video
-
-### Tools (Recommended)
-- Screen Recording: OBS Studio (free), ScreenFlow (Mac), Camtasia (paid)
-- Editing: DaVinci Resolve (free), Premiere Pro (paid)
-- Audio: Audacity (free)
-- Thumbnail: Canva (free)
-
----
-
-## 🧪 Testing the Demo
-
-### Test Deduplication
-1. Go to Report page
-2. GPS near Bandra cluster (19.0596, 72.8295)
-3. Upload image, run AI, submit
-4. Modal appears → Click "Join"
-5. Verify report attached to cluster
-
-### Test Discussion
-1. On cluster detail page
-2. Add comment and post
-3. Refresh page (F5)
-4. Comment persists (localStorage)
-
-### Test Recommendations
-1. Click "Generate Recommendations"
-2. Verify suggestions appear based on severity
-3. Refresh page
-4. Recommendations persist
-
-### Test Merge
-1. On cluster detail
-2. Admin Actions → Select target
-3. Click Merge
-4. Verify reports moved to target cluster
-
----
-
-## 📞 Support & Contact
-
-### Issues or Questions
-- Check browser console for errors (F12 → Console)
-- Clear localStorage if data corrupted: `localStorage.clear()`
-- Restart dev server: `npm run dev`
-
-### Repository
-- GitHub: [Link to repo]
-- Issues: [Link to issues page]
-- Discussions: [Link to discussions]
-
----
-
-## 📄 License
-
-This project is provided as a proof-of-concept for demonstration and educational purposes.
-
----
-
-## 🙏 Acknowledgments
-
-- Leaflet for mapping
-- Tailwind CSS for styling
-- React community for ecosystem
-- OpenStreetMap for map data
-
----
-
-## 🌟 Next Steps
-
-1. **For Demo Video**: Follow STORYBOARD.md + RECORDING_GUIDE.md
-2. **For Backend**: Plan Node.js + MongoDB integration
-3. **For Mobile**: Design React Native version
-4. **For AI**: Integrate real ML models (image analysis, NLP)
-5. **For Deployment**: Cloud infrastructure (AWS/GCP/Azure)
-
----
-
-**Built with ❤️ for smarter, safer cities.**
 
